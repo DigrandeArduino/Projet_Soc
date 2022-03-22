@@ -1,0 +1,15 @@
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\bin\Debug\net6.0\WebProxyService.exe
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\bin\Debug\net6.0\WebProxyService.deps.json
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\bin\Debug\net6.0\WebProxyService.runtimeconfig.json
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\bin\Debug\net6.0\WebProxyService.dll
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\bin\Debug\net6.0\ref\WebProxyService.dll
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\bin\Debug\net6.0\WebProxyService.pdb
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\obj\Debug\net6.0\WebProxyService.csproj.AssemblyReference.cache
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\obj\Debug\net6.0\WebProxyService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\obj\Debug\net6.0\WebProxyService.AssemblyInfoInputs.cache
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\obj\Debug\net6.0\WebProxyService.AssemblyInfo.cs
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\obj\Debug\net6.0\WebProxyService.csproj.CoreCompileInputs.cache
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\obj\Debug\net6.0\WebProxyService.dll
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\obj\Debug\net6.0\ref\WebProxyService.dll
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\obj\Debug\net6.0\WebProxyService.pdb
+C:\Users\thodi\Desktop\SOC\Projet\Projet_Soc\Projet_SOC\WebProxyService\obj\Debug\net6.0\WebProxyService.genruntimeconfig.cache

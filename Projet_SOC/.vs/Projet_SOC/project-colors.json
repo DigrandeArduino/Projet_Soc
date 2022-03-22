@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f4a21f50-8e04-4409-bf7b-9c5a43c0d6b4": {
+      "ProjectGuid": "f4a21f50-8e04-4409-bf7b-9c5a43c0d6b4",
+      "DisplayName": "CLientLourd",
+      "ColorIndex": 0
+    },
+    "d3988c09-c564-414e-aed6-9fee4eb7f927": {
+      "ProjectGuid": "d3988c09-c564-414e-aed6-9fee4eb7f927",
+      "DisplayName": "WebProxyService",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
