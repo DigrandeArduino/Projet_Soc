@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thodi\\Desktop\\SOC\\Projet\\Projet_Soc\\Projet_SOC\\Projet_SOC\\CLientLourd.csproj": {}
+    "C:\\Users\\thodi\\Desktop\\SOC\\Projet_Soc\\Projet_SOC\\Projet_SOC\\CLientLourd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thodi\\Desktop\\SOC\\Projet\\Projet_Soc\\Projet_SOC\\Projet_SOC\\CLientLourd.csproj": {
+    "C:\\Users\\thodi\\Desktop\\SOC\\Projet_Soc\\Projet_SOC\\Projet_SOC\\CLientLourd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thodi\\Desktop\\SOC\\Projet\\Projet_Soc\\Projet_SOC\\Projet_SOC\\CLientLourd.csproj",
+        "projectUniqueName": "C:\\Users\\thodi\\Desktop\\SOC\\Projet_Soc\\Projet_SOC\\Projet_SOC\\CLientLourd.csproj",
         "projectName": "CLientLourd",
-        "projectPath": "C:\\Users\\thodi\\Desktop\\SOC\\Projet\\Projet_Soc\\Projet_SOC\\Projet_SOC\\CLientLourd.csproj",
+        "projectPath": "C:\\Users\\thodi\\Desktop\\SOC\\Projet_Soc\\Projet_SOC\\Projet_SOC\\CLientLourd.csproj",
         "packagesPath": "C:\\Users\\thodi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thodi\\Desktop\\SOC\\Projet\\Projet_Soc\\Projet_SOC\\Projet_SOC\\obj\\",
+        "outputPath": "C:\\Users\\thodi\\Desktop\\SOC\\Projet_Soc\\Projet_SOC\\Projet_SOC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thodi\\AppData\\Roaming\\NuGet\\NuGet.Config",
