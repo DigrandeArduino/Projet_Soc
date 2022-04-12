@@ -28,3 +28,5 @@ C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\XsdGener
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.csproj.CopyComplete
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.dll
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.pdb
+C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\Newtonsoft.Json.dll
+C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\Newtonsoft.Json.xml

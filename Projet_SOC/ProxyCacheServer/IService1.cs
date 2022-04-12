@@ -5,7 +5,6 @@ using System.Runtime.Caching;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace ProxyCacheServer
 {
@@ -112,7 +111,7 @@ namespace ProxyCacheServer
     public class JCDecauxItem
     {
         [DataMember]
-        private List<Station> item { get; set; }
+        public List<Station> item { get; set; }
         private readonly HttpClient client = new HttpClient();
         public JCDecauxItem(String key)
         {

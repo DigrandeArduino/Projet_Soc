@@ -10,7 +10,22 @@
       "ProjectGuid": "d3988c09-c564-414e-aed6-9fee4eb7f927",
       "DisplayName": "WebProxyService",
       "ColorIndex": 1
+    },
+    "0c1e1186-bf07-4792-9cf7-881a7b04dc23": {
+      "ProjectGuid": "0c1e1186-bf07-4792-9cf7-881a7b04dc23",
+      "DisplayName": "ProxyCacheServer",
+      "ColorIndex": 2
+    },
+    "3d3f6ae3-5e16-4bbe-bbaf-ec8019b0aa46": {
+      "ProjectGuid": "3d3f6ae3-5e16-4bbe-bbaf-ec8019b0aa46",
+      "DisplayName": "RoutingBikes",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }

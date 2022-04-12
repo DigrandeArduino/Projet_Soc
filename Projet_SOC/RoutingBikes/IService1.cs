@@ -1,42 +1,99 @@
-﻿using System.Runtime.Serialization;
-using System.ServiceModel;
+﻿using System.ServiceModel;
 using System.Threading.Tasks;
+using System.Net.Http;
+using ProxyCacheServer;
 
 namespace RoutingBikes
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+    internal class Reponse
+    {
+        public Feature[] features { get; set; }
+    }
+
+    internal class Feature
+    {
+        public Geometry geometry { get; set; }
+
+        public Properties properties { get; set; }
+    }
+
+    internal class Properties
+    {
+
+    }
+
+    internal class Geometry
+    {
+        public double[] coordinates { get; set; }
+    }
+
+    internal class Find
+    {
+        public Feature2[] features { get; set; }
+    }
+
+    internal class Feature2
+    {
+        public Properties2 properties { get; set; }
+    }
+
+    internal class Properties2
+    {
+        public Segments[] segments { get; set; }
+    }
+    internal class Segments
+    {
+        public double distance { get; set; }
+        public double duration { get; set; }
+    }
+
     [ServiceContract]
     public interface IService1
     {
         [OperationContract]
-        Task<string> GetData(int value);
+        Task<JCDecauxItem> GetAllData();
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        Task<JCDecauxItem> GetContract(string Contract);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        Task<double[]> GetCoordinate(string Adresse);
+
+        [OperationContract]
+        Task<double[]> FindStation(string Adresse);
+
     }
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "RoutingBikes.ContractType".
-    [DataContract]
-    public class CompositeType
+    public class Finder
     {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        private Reponse item { get; set; }
+        private readonly HttpClient client = new HttpClient();
 
-        [DataMember]
-        public bool BoolValue
+        private void SetPosition(string adresse)
         {
-            get { return boolValue; }
-            set { boolValue = value; }
+            adresse = adresse.Replace(" ", "+");
+            var stringTask = client.GetStringAsync ("https://api.openrouteservice.org/geocode/search?api_key=5b3ce3597851110001cf62488cc5a239dfcc4cb480cb0a0acb208bd0&text="+adresse).Result;
+            item = System.Text.Json.JsonSerializer.Deserialize<Reponse>(stringTask);
         }
 
-        [DataMember]
-        public string StringValue
+        public double[] GetCoord(string adresse)
         {
-            get { return stringValue; }
-            set { stringValue = value; }
+            SetPosition(adresse);
+            return new double[2] { item.features[0].geometry.coordinates[1], item.features[0].geometry.coordinates[0] };
+        }
+    }
+
+    public class PathFinder
+    {
+        private Find item { get; set; }
+        private readonly HttpClient client = new HttpClient();
+
+        public double Path(double[] start, double[] end)
+        {
+            string uri = "https://api.openrouteservice.org/v2/directions/foot-hiking?api_key=5b3ce3597851110001cf62488cc5a239dfcc4cb480cb0a0acb208bd0&start=" + start[1].ToString().Replace(",",".") + "," + start[0].ToString().Replace(",", ".") + "&end=" + end[1].ToString().Replace(",", ".") + "," + end[0].ToString().Replace(",", ".");
+            var stringTask = client.GetStringAsync(uri).Result;
+            item = System.Text.Json.JsonSerializer.Deserialize<Find>(stringTask);
+            return item.features[0].properties.segments[0].duration;
         }
     }
 }
