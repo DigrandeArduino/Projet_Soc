@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace RoutingBikes
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class Service1 : IService1
     {
         private Finder _binder = new Finder();
@@ -32,32 +31,82 @@ namespace RoutingBikes
             return _binder.GetCoord(Adresse);
         }
 
-        public async Task<double[]> FindStation(string Adresse)
+        private async Task<SortedDictionary<double, Station>> SortedStations(double[] coordinate)
         {
             JCDecauxItem all_data = GetAllData().Result;
-            double[] coordinate = GetCoordinate(Adresse).Result;
-
             double distance = 0;
-            double old = 9999999999;
-            List<Station> stationFind = new List<Station>();
-            foreach(Station station in all_data.item)
+            SortedDictionary<double,Station> stationFind = new SortedDictionary<double,Station>();
+
+            foreach (Station station in all_data.item)
             {
                 distance = Math.Sqrt(Math.Pow(station.position.lat-coordinate[0],2) + Math.Pow(station.position.lng-coordinate[1],2));
-                if(distance < old)
+                try
                 {
-                    old = distance;
-                    stationFind.Add(station);
+                    stationFind.Add(distance, station);
+                }
+                catch (ArgumentException)
+                {
+                    distance = 0;
                 }
             }
 
             //_finder.Path(a, b);
 
-            /*
-             * HERE do the new algo de trie pour les stations a demain :) 
-             */
+            return stationFind;
+        }
+
+        private async Task<SortedDictionary<double,Station>> DistanceByRoad(Station[] list, double[] coordinate)
+        {
+            SortedDictionary<double, Station> stationSorted = new SortedDictionary<double, Station>();
+            double duration = 0;
+            for(int i = 0; i < list.Length; i++)
+            {
+                duration = _finder.Path(coordinate,new double[2] { list[i].position.lat,list[i].position.lng});
+                try
+                {
+                    stationSorted.Add(duration, list[i]);
+                }
+                catch (ArgumentException)
+                {
+                    duration = 0;
+                }
+            }
+            return stationSorted;
+        }
+
+        public async Task<Station> FindStation(string Adresse, bool searchBike)
+        {
+            double[] coordinate = GetCoordinate(Adresse).Result;
+            SortedDictionary<double, Station> stationFind = SortedStations(coordinate).Result;
+            SortedDictionary<double, Station> sortedByTime = new SortedDictionary<double, Station>();
+            Station[] fiveStation = new Station[5];
+            bool found = false;
 
             int i = 0;
-            return new double[] {0,0};
+            foreach (Station station in stationFind.Values)
+            {
+                fiveStation[i] = station;
+                i++;
+                if (i == 5)
+                {
+                    i = 0;
+                    sortedByTime = DistanceByRoad(fiveStation, coordinate).Result;
+                    foreach (Station value in sortedByTime.Values)
+                    {
+                        Service1Client client = new Service1Client();
+                        JCDecauxItem stations = client.GetOneContract(value.contract_name);
+                        client.Close();
+                        foreach (Station value2 in stations.item)
+                        {
+                            if ((value2.number == value.number && value2.available_bikes > 0 && searchBike) || (value2.number == value.number && value2.available_bike_stands > 0 && !searchBike))
+                            {
+                                return value2;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
         }
     }
 }
