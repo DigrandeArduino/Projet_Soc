@@ -74,9 +74,9 @@ namespace RoutingBikes
             return stationSorted;
         }
 
-        public async Task<Station> FindStation(string Adresse, bool searchBike)
+        public async Task<Station> FindStation(string adresse, string searchBike)
         {
-            double[] coordinate = GetCoordinate(Adresse).Result;
+            double[] coordinate = GetCoordinate(adresse).Result;
             SortedDictionary<double, Station> stationFind = SortedStations(coordinate).Result;
             SortedDictionary<double, Station> sortedByTime = new SortedDictionary<double, Station>();
             Station[] fiveStation = new Station[5];
@@ -98,7 +98,7 @@ namespace RoutingBikes
                         client.Close();
                         foreach (Station value2 in stations.item)
                         {
-                            if ((value2.number == value.number && value2.available_bikes > 0 && searchBike) || (value2.number == value.number && value2.available_bike_stands > 0 && !searchBike))
+                            if ((value2.number == value.number && value2.available_bikes > 0 && searchBike.Equals("yes")) || (value2.number == value.number && value2.available_bike_stands > 0 && searchBike.Equals("no")))
                             {
                                 return value2;
                             }
@@ -108,5 +108,12 @@ namespace RoutingBikes
             }
             return null;
         }
+
+        /*public string GetTheStation(string adresse, string searchBike)
+        {
+            Station station = FindStation(adresse, searchBike).Result;
+            string answer = JsonSerializer.Serialize(station);
+            return answer;
+        }*/
     }
 }

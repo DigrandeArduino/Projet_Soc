@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Net.Http;
 using ProxyCacheServer;
-using System.Collections.Generic;
+using System.ServiceModel.Web;
 
 namespace RoutingBikes
 {
@@ -61,7 +61,10 @@ namespace RoutingBikes
         Task<double[]> GetCoordinate(string Adresse);
 
         [OperationContract]
-        Task<Station> FindStation(string Adresse, bool searchBike);
+        /*[WebInvoke(
+            UriTemplate = "/default?adresse={adresse}&searchBike={searchBike}",
+            BodyStyle = WebMessageBodyStyle.Bare)]*/
+        Task<Station> FindStation(string adresse, string searchBike);
     }
 
     public class Finder
