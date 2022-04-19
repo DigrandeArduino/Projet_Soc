@@ -1,0 +1,100 @@
+.title {
+	background-color: #353535;
+	position:relative;
+	box-sizing: content-box;
+	/*width: fit-content;*/
+	text-align: right;
+    margin-right: 40%;
+}
+
+body
+{
+	background: #7E7E7E;
+}
+
+#a1{
+	color: white;
+	margin: 10px;
+	margin-right: 20px;
+}
+
+#a2{
+	/*background-color: #353535;*/
+	box-sizing: content-box;
+	width: fit-content;
+	display: inline;
+	margin: 10px;
+}
+
+#a3{
+	background-color: white;
+	display: inline;
+	margin: 10px;
+}
+
+#a4{
+	/*background-color: green;*/
+	box-sizing: content-box;
+	width: fit-content;
+	display: inline;
+	margin: 10px;
+}
+
+#a5{
+	background-color: white;
+	display: inline;
+	margin: 10px;
+}
+
+.mainForm {
+	color: white;
+	background-color: #7E7E7E;
+}
+
+#value{
+	background-color: #7E7E7E;
+	box-sizing: content-box;
+	width: 46%;
+	height: 94.4%;
+	display: inline-block;
+	margin-top: auto;
+	float: right;
+}
+
+#two {
+	display: inline;
+}
+
+#map {
+	box-sizing: content-box;
+	padding: 10px;
+	width: 50%;
+	height: 90%;
+	background-color: #353535;
+	display: inline-block;
+}
+
+button {
+	justify-content: flex-end;
+	margin-left: 5%;
+}
+
+#instruction {
+	color: black;
+	padding: 10px;
+	background-color: #353535;
+}
+
+#content {
+	background-color: white;
+	padding: 5px;
+}
+
+#pathway {
+	color: white;
+}
+
+#instruc{
+	height: 64%;
+	overflow: auto;
+}
