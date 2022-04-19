@@ -28,24 +28,38 @@ namespace RoutingBikes
         public double[] coordinates { get; set; }
     }
 
-    internal class Find
+    public class Find
     {
         public Feature2[] features { get; set; }
     }
 
-    internal class Feature2
+    public class Feature2
     {
         public Properties2 properties { get; set; }
+        public Geometry2 geometry { get; set; }
     }
 
-    internal class Properties2
+    public class Geometry2
+    {
+        public double[][] coordinates { get; set; }
+    }
+
+    public class Properties2
     {
         public Segments[] segments { get; set; }
     }
-    internal class Segments
+    public class Segments
     {
         public double distance { get; set; }
         public double duration { get; set; }
+        public Step[] steps { get; set; }
+    }
+
+    public class Step
+    {
+        public double distance { get; set; }
+        public double duration { get; set; }
+        public string instruction { get; set; }
     }
 
     [ServiceContract]
@@ -61,10 +75,7 @@ namespace RoutingBikes
         Task<double[]> GetCoordinate(string Adresse);
 
         [OperationContract]
-        /*[WebInvoke(
-            UriTemplate = "/default?adresse={adresse}&searchBike={searchBike}",
-            BodyStyle = WebMessageBodyStyle.Bare)]*/
-        Task<Station> FindStation(string adresse, string searchBike);
+        Task<Station> FindStation(string adresse, bool searchBike, bool isCoord);
     }
 
     public class Finder
@@ -88,12 +99,13 @@ namespace RoutingBikes
 
     public class PathFinder
     {
-        private Find item { get; set; }
+        public Find item { get; set; }
         private readonly HttpClient client = new HttpClient();
 
-        public double Path(double[] start, double[] end)
+        /*foot-hiking*/
+        public double Path(double[] start, double[] end, string typePath)
         {
-            string uri = "https://api.openrouteservice.org/v2/directions/foot-hiking?api_key=5b3ce3597851110001cf62488cc5a239dfcc4cb480cb0a0acb208bd0&start=" + start[1].ToString().Replace(",",".") + "," + start[0].ToString().Replace(",", ".") + "&end=" + end[1].ToString().Replace(",", ".") + "," + end[0].ToString().Replace(",", ".");
+            string uri = "https://api.openrouteservice.org/v2/directions/"+typePath+"?api_key=5b3ce3597851110001cf62488cc5a239dfcc4cb480cb0a0acb208bd0&start=" + start[1].ToString().Replace(",",".") + "," + start[0].ToString().Replace(",", ".") + "&end=" + end[1].ToString().Replace(",", ".") + "," + end[0].ToString().Replace(",", ".");
             var stringTask = client.GetStringAsync(uri).Result;
             item = System.Text.Json.JsonSerializer.Deserialize<Find>(stringTask);
             return item.features[0].properties.segments[0].duration;

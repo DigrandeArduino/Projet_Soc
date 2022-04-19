@@ -11,37 +11,42 @@
 	<h1 id="a1">JCDecaux Light client</h1>
 	</div>
 	<div class=mainForm>
+		<script type="text/javascript" src="./script.js"></script>
 		<div id="map">
 			<script type="text/javascript">
 				var map = new ol.Map({
-    			target: 'map', // <-- This is the id of the div in which the map will be built.
-    			layers: [
-        			new ol.layer.Tile({
-            		source: new ol.source.OSM()
-        		})
-    			],
-    			view: new ol.View({
-        		center: ol.proj.fromLonLat([7.0985774, 43.6365619]), // <-- Those are the GPS coordinates to center the map to.
-        		zoom: 10 // You can adjust the default zoom.
-    			})
-			});
-		</script>
+				target: 'map', // <-- This is the id of the div in which the map will be built.
+				layers: [
+					new ol.layer.Tile({
+					source: new ol.source.OSM()
+				})
+				],
+				view: new ol.View({
+				center: ol.proj.fromLonLat([7.0985774, 43.6365619]), // <-- Those are the GPS coordinates to center the map to.
+				zoom: 10 // You can adjust the default zoom.
+				})
+				});
+			</script>
 		</div>
-		<div id=value>
+		<div id="value">
 			<div id="one">
 				<h3 id="a2">Enter your position :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
 				<input id="a3" type="text" name="start">
-				<button>Get my position</button>
+				<button onclick="getPosition()">Get my position</button>
 			</div>
 			<div id="two">
 				<h3 id="a4">Enter your destination :</h3>
 				<input id="a5" type="text" name="end">
-				<button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+				<button onclick="search()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
 			</div>
 			<div id="instruction">
-				<p>Lorem ipsum<br>Lorem</p>
-				<button><</button>
-				<button>></button>
+				<h3 id="pathway">List of the pathway :</h3>
+				<div id="content">
+					<p id="instruc">Enter a start position and a destination...</p>
+					<button onclick="startPath()">Start path</button>
+					<button onclick="bikePath()">Bike path</button>
+					<button onclick="endPath()">End path</button>
+				</div>
 			</div>
 		</div>
 	</div>

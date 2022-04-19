@@ -1,26 +1,25 @@
 .title {
-	background-color: blue;
+	background-color: #353535;
 	position:relative;
 	box-sizing: content-box;
-	width: fit-content;
-	text-align: center;
-	border-radius: 30px;
-	margin-left: auto;
-    margin-right: auto;
+	/*width: fit-content;*/
+	text-align: right;
+    margin-right: 40%;
 }
 
 body
 {
-	background: grey;
+	background: #7E7E7E;
 }
 
 #a1{
 	color: white;
 	margin: 10px;
+	margin-right: 20px;
 }
 
 #a2{
-	background-color: green;
+	/*background-color: #353535;*/
 	box-sizing: content-box;
 	width: fit-content;
 	display: inline;
@@ -28,13 +27,13 @@ body
 }
 
 #a3{
-	background-color: green;
+	background-color: white;
 	display: inline;
 	margin: 10px;
 }
 
 #a4{
-	background-color: green;
+	/*background-color: green;*/
 	box-sizing: content-box;
 	width: fit-content;
 	display: inline;
@@ -42,18 +41,18 @@ body
 }
 
 #a5{
-	background-color: green;
+	background-color: white;
 	display: inline;
 	margin: 10px;
 }
 
 .mainForm {
 	color: white;
-	background-color: red;
+	background-color: #7E7E7E;
 }
 
 #value{
-	background-color: white;
+	background-color: #7E7E7E;
 	box-sizing: content-box;
 	width: 46%;
 	height: 94.4%;
@@ -68,10 +67,10 @@ body
 
 #map {
 	box-sizing: content-box;
-	padding: 20px;
+	padding: 10px;
 	width: 50%;
 	height: 90%;
-	background-color: pink;
+	background-color: #353535;
 	display: inline-block;
 }
 
@@ -82,6 +81,20 @@ button {
 
 #instruction {
 	color: black;
-	padding: 20px;
-	background-color: purple;
+	padding: 10px;
+	background-color: #353535;
+}
+
+#content {
+	background-color: white;
+	padding: 5px;
+}
+
+#pathway {
+	color: white;
+}
+
+#instruc{
+	height: 64%;
+	overflow: auto;
 }

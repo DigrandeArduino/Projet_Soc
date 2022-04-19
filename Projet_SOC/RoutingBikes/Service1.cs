@@ -2,6 +2,7 @@
 using RoutingBikes.Proxy;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
 
 namespace RoutingBikes
@@ -61,7 +62,7 @@ namespace RoutingBikes
             double duration = 0;
             for(int i = 0; i < list.Length; i++)
             {
-                duration = _finder.Path(coordinate,new double[2] { list[i].position.lat,list[i].position.lng});
+                duration = _finder.Path(coordinate,new double[2] { list[i].position.lat,list[i].position.lng}, "foot-hiking");
                 try
                 {
                     stationSorted.Add(duration, list[i]);
@@ -74,9 +75,20 @@ namespace RoutingBikes
             return stationSorted;
         }
 
-        public async Task<Station> FindStation(string adresse, string searchBike)
+        public async Task<Station> FindStation(string adresse, bool searchBike, bool isCoord)
         {
-            double[] coordinate = GetCoordinate(adresse).Result;
+            double[] coordinate = new double[2];
+            if (isCoord)
+            {
+                NumberFormatInfo provider = new NumberFormatInfo();
+                provider.NumberDecimalSeparator = ".";
+                var temp = adresse.Split(',');
+                coordinate = new double[] { Convert.ToDouble(temp[0],provider), Convert.ToDouble(temp[1],provider) };
+            }
+            else
+            {
+                coordinate = GetCoordinate(adresse).Result;
+            }
             SortedDictionary<double, Station> stationFind = SortedStations(coordinate).Result;
             SortedDictionary<double, Station> sortedByTime = new SortedDictionary<double, Station>();
             Station[] fiveStation = new Station[5];
@@ -98,7 +110,7 @@ namespace RoutingBikes
                         client.Close();
                         foreach (Station value2 in stations.item)
                         {
-                            if ((value2.number == value.number && value2.available_bikes > 0 && searchBike.Equals("yes")) || (value2.number == value.number && value2.available_bike_stands > 0 && searchBike.Equals("no")))
+                            if ((value2.number == value.number && value2.available_bikes > 0 && searchBike) || (value2.number == value.number && value2.available_bike_stands > 0 && !searchBike))
                             {
                                 return value2;
                             }
@@ -108,12 +120,5 @@ namespace RoutingBikes
             }
             return null;
         }
-
-        /*public string GetTheStation(string adresse, string searchBike)
-        {
-            Station station = FindStation(adresse, searchBike).Result;
-            string answer = JsonSerializer.Serialize(station);
-            return answer;
-        }*/
     }
 }

@@ -9,10 +9,18 @@ namespace RoutingBikes
         [OperationContract]
         [WebInvoke(
                 Method = "GET",
-                UriTemplate = "/getStation?adresse={adresse}&searchBike={searchBike}",
+                UriTemplate = "/getStation?adresse={adresse}&searchBike={searchBike}&isCoord={isCoord}",
                 RequestFormat = WebMessageFormat.Json,
                 ResponseFormat = WebMessageFormat.Json)]
-        string GetTheStation(string adresse, string searchBike);
+        string GetTheStation(string adresse, string searchBike, string isCoord);
+
+        [OperationContract]
+        [WebInvoke(
+            Method = "GET",
+            UriTemplate = "/getPath?start={start}&end={end}&isCoord={isCoord}",
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json)]
+        FinalPath GetFinalPath(string start, string end, string isCoord);
     }
 
 }
