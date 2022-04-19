@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using System.Net.Http;
 using ProxyCacheServer;
-using System.ServiceModel.Web;
 
 namespace RoutingBikes
 {
