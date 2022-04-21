@@ -23,7 +23,7 @@ namespace ClientLourd
                 start = DateTime.Now;
                 station = client.FindStationAsync(adresse, true, false).Result;
                 Console.WriteLine("Execution time 3 : " + DateTime.Now.Subtract(start).ToString() + "s\n");
-                Console.WriteLine("Continuer ?");
+                Console.WriteLine("Continuer ? [stop]");
                 stop = Console.ReadLine();
             }
 
