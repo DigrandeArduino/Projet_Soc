@@ -8,7 +8,7 @@ namespace ClientLourd
         {
             Console.WriteLine("CLIENT LOURD :\nExemple de fonction :\n");
             string stop = "n";
-            while (!stop.Equals("stop"))
+            while (!stop.Equals(""))
             {
                 Service1Client client = new Service1Client();
                 Console.WriteLine("Destination :\n");
@@ -23,7 +23,7 @@ namespace ClientLourd
                 start = DateTime.Now;
                 station = client.FindStationAsync(adresse, true, false).Result;
                 Console.WriteLine("Execution time 3 : " + DateTime.Now.Subtract(start).ToString() + "s\n");
-                Console.WriteLine("Continuer ? [stop]");
+                Console.WriteLine("Continuer ? [enter to stop]");
                 stop = Console.ReadLine();
             }
 

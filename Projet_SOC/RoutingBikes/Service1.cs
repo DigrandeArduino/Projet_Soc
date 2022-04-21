@@ -3,6 +3,7 @@ using RoutingBikes.Proxy;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace RoutingBikes
@@ -51,8 +52,6 @@ namespace RoutingBikes
                 }
             }
 
-            //_finder.Path(a, b);
-
             return stationFind;
         }
 
@@ -62,7 +61,7 @@ namespace RoutingBikes
             double duration = 0;
             for(int i = 0; i < list.Length; i++)
             {
-                duration = _finder.Path(coordinate,new double[2] { list[i].position.lat,list[i].position.lng}, "foot-hiking");
+                duration = _finder.Path(coordinate,new double[2] { list[i].position.lat,list[i].position.lng}, "foot-walking");
                 try
                 {
                     stationSorted.Add(duration, list[i]);
@@ -77,6 +76,7 @@ namespace RoutingBikes
 
         public async Task<Station> FindStation(string adresse, bool searchBike, bool isCoord)
         {
+            Console.WriteLine("Find one station...");
             double[] coordinate = new double[2];
             if (isCoord)
             {
@@ -95,29 +95,26 @@ namespace RoutingBikes
             bool found = false;
 
             int i = 0;
+            Service1Client client = new Service1Client();
             foreach (Station station in stationFind.Values)
             {
-                fiveStation[i] = station;
-                i++;
-                if (i == 5)
+                JCDecauxItem stations = client.GetOneContract(station.contract_name);
+                foreach (Station value2 in stations.item)
                 {
-                    i = 0;
-                    sortedByTime = DistanceByRoad(fiveStation, coordinate).Result;
-                    foreach (Station value in sortedByTime.Values)
+                    if ((value2.number == station.number && value2.available_bikes > 0 && searchBike) || (value2.number == station.number && value2.available_bike_stands > 0 && !searchBike))
                     {
-                        Service1Client client = new Service1Client();
-                        JCDecauxItem stations = client.GetOneContract(value.contract_name);
-                        client.Close();
-                        foreach (Station value2 in stations.item)
-                        {
-                            if ((value2.number == value.number && value2.available_bikes > 0 && searchBike) || (value2.number == value.number && value2.available_bike_stands > 0 && !searchBike))
-                            {
-                                return value2;
-                            }
-                        }
+                        fiveStation[i] = station;
+                        i++;
                     }
                 }
+                if (i == 5)
+                {
+                    sortedByTime = DistanceByRoad(fiveStation, coordinate).Result;
+                    client.Close();
+                    return sortedByTime[sortedByTime.Keys.Min()];
+                }
             }
+            client.Close();
             return null;
         }
     }
