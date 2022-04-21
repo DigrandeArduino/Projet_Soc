@@ -35,6 +35,7 @@ namespace RoutingBikes
 
         public FinalPath GetFinalPath(string start, string end, string isCoord)
         {
+            Console.WriteLine("Find a path...");
             double[] coord_start = new double[] {0,0};
             double total_time = 0;
             if (isCoord.Equals("yes"))
@@ -57,7 +58,7 @@ namespace RoutingBikes
             path.startStationCoord = new double[] { station_start.position.lat, station_start.position.lng };
             path.endStationCoord = new double[] { station_end.position.lat, station_end.position.lng };
 
-            _pathFinder.Path(path.startCoord, path.startStationCoord, "foot-hiking");
+            _pathFinder.Path(path.startCoord, path.startStationCoord, "foot-walking");
             path.pathStartToStation = _pathFinder.item.features[0].geometry.coordinates;
             path.startStep = _pathFinder.item.features[0].properties.segments[0].steps;
             total_time += _pathFinder.item.features[0].properties.segments[0].duration;
@@ -67,25 +68,27 @@ namespace RoutingBikes
             path.bikeStep = _pathFinder.item.features[0].properties.segments[0].steps;
             total_time += _pathFinder.item.features[0].properties.segments[0].duration;
 
-            _pathFinder.Path(path.endStationCoord, path.endCoord, "foot-hiking");
+            _pathFinder.Path(path.endStationCoord, path.endCoord, "foot-walking");
             path.pathStartToEnd = _pathFinder.item.features[0].geometry.coordinates;
             path.endStep = _pathFinder.item.features[0].properties.segments[0].steps;
             total_time += _pathFinder.item.features[0].properties.segments[0].duration;
 
             //Check if travel by foot is better :
-            _pathFinder.Path(path.startCoord, path.endCoord, "foot-hiking");
+            _pathFinder.Path(path.startCoord, path.endCoord, "foot-walking");
             if (total_time >= _pathFinder.item.features[0].properties.segments[0].duration) 
             {
                 path.footIsBetter = "yes";
                 path.pathStartToStation = _pathFinder.item.features[0].geometry.coordinates;
                 path.startStep = _pathFinder.item.features[0].properties.segments[0].steps;
-                path.total_time = _pathFinder.item.features[0].properties.segments[0].duration;
+                path.total_time = _pathFinder.item.features[0].properties.segments[0].duration; 
+                Console.WriteLine("Foot path is better !");
             }
 
             else
             {
                 path.footIsBetter = "no";
                 path.total_time = total_time;
+                Console.WriteLine("Bike path is better !");
             }
 
             return path;
