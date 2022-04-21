@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZWMQLzfWkj6d7o1OOFFR3g6DUEshfw2pGCwC79DrqM+U43MeTZqVUeQQlr6YQ9BAo800zJgAcu6d8jLEi3H5TA==",
+  "dgSpecHash": "78XkK8sdKEQC9zzS/fLBbr0upbzdXg+gNeLoNQM2MHXzF/SDo60qEtN0I91CqaaOOxwo/4nlDs1wzKsqMaYBzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thodi\\Desktop\\Local\\SOC\\Projet_Soc\\Projet_SOC\\Projet_SOC\\CLientLourd.csproj",
+  "projectFilePath": "C:\\Users\\thodi\\Desktop\\Local\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\CLientLourd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thodi\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\thodi\\.nuget\\packages\\microsoft.identitymodel.logging\\6.8.0\\microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
