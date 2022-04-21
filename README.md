@@ -1,2 +1,4 @@
 # Projet_Soc
-TEST
+Repository for the routing bike server project
+
+By Thomas Di Grande
