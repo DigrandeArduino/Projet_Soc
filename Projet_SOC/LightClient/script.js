@@ -67,60 +67,71 @@ function displayValue(){
     if (this.status!==200) {
         console.log("bad request");
     } else {
-    response = JSON.parse(this.responseText);
+    if(this.responseText!=""){
+	    response = JSON.parse(this.responseText);
 
-    if(is_a_set){
-    	is_a_set = false;
-    	map.removeLayer(vector_start);
-    }
+	    if(is_a_set){
+	    	is_a_set = false;
+	    	map.removeLayer(vector_start);
+	    }
 
-    if(is_b_set){
-    	is_b_set = false;
-    	map.removeLayer(vector_bike);
-    }
+	    if(is_b_set){
+	    	is_b_set = false;
+	    	map.removeLayer(vector_bike);
+	    }
 
-    if(is_c_set){
-    	is_c_set = false;
-    	map.removeLayer(vector_end);
-    }
+	    if(is_c_set){
+	    	is_c_set = false;
+	    	map.removeLayer(vector_end);
+	    }
 
-    var start = response.pathStartToStation;
-    drawLine(start,'#000CFF',4,map,"a");
-    map.addLayer(vector_start);
+	    var start = response.pathStartToStation;
+	    drawLine(start,'#000CFF',4,map,"a");
+	    map.addLayer(vector_start);
 
-    instruct_start = response.startStep;
-    if(response.footIsBetter!=="yes"){
-    	var bike = response.pathBikeToStation;
-    	drawLine(bike,'#007107',6,map,"b");
-    	map.addLayer(vector_bike);
-    	var end = response.pathStartToEnd;
-    	drawLine(end,'#000CFF',4,map,"c");
-    	map.addLayer(vector_end);
-    	instruct_bike = response.bikeStep;
-    	instruct_end = response.endStep;
-    }
-    else {
-    	instruct_bike = instruct_start;
-    	instruct_end = instruct_start;
-    }
+	    instruct_start = response.startStep;
+	    if(response.footIsBetter!=="yes"){
+	    	var bike = response.pathBikeToStation;
+	    	drawLine(bike,'#007107',6,map,"b");
+	    	map.addLayer(vector_bike);
+	    	var end = response.pathStartToEnd;
+	    	drawLine(end,'#000CFF',4,map,"c");
+	    	map.addLayer(vector_end);
+	    	instruct_bike = response.bikeStep;
+	    	instruct_end = response.endStep;
+	    }
+	    else {
+	    	instruct_bike = instruct_start;
+	    	instruct_end = instruct_start;
+	    }
 
-    var sub_title = document.getElementById("pathway");
-    sub_title.textContent = "List of the pathway [duration : "+response.total_time+" s] :";
-    
-    var start_zoom = [response.startCoord[1],response.startCoord[0]]
-    startPath();
+	    var sub_title = document.getElementById("pathway");
+	    sub_title.textContent = "List of the pathway [duration : "+response.total_time+" s] :";
+	    
+	    var start_zoom = [response.startCoord[1],response.startCoord[0]]
+	    startPath();
 
-    map.setView(new ol.View({
-            center: ol.proj.fromLonLat(start_zoom),
-            zoom: 15
-        }));
-    }
+	    map.setView(new ol.View({
+	            center: ol.proj.fromLonLat(start_zoom),
+	            zoom: 15
+	        }));
+	    }
+	else{
+	    instruct_start = "none";
+	    instruct_bike = "none";
+	    instruct_end = "none";
+	    startPath();
+	}
+}
 }
 
 function startPath(){
 	var parragraphe = document.getElementById("instruc");
 	if(instruct_start==="start"){
 		parragraphe.textContent = "Enter a start position and a destination...";
+	}
+	if(instruct_start==="none"){
+		parragraphe.textContent = "Error too many request on OpenRouteServices !";
 	}
 	else{
 		parragraphe.textContent = "Go to the first station :\n"
@@ -136,6 +147,9 @@ function bikePath(){
 	if(instruct_bike==="bike"){
 		parragraphe.textContent = "Enter a start position and a destination...";
 	}
+	if(instruct_bike==="none"){
+		parragraphe.textContent = "Error too many request on OpenRouteServices !";
+	}
 	else{
 		parragraphe.textContent = "Biking to the final station :\n"
 		for (var i = 0; i < instruct_bike.length; i++) {
@@ -149,6 +163,9 @@ function endPath(){
 	var parragraphe = document.getElementById("instruc");
 	if(instruct_end==="end"){
 		parragraphe.textContent = "Enter a start position and a destination...";
+	}
+	if(instruct_end==="none"){
+		parragraphe.textContent = "Error too many request on OpenRouteServices !";
 	}
 	else{
 		parragraphe.textContent = "Go to the destination :\n"
@@ -173,6 +190,8 @@ function getUserCoord(value){
 }
 
 function search(){
+	var sub_title = document.getElementById("pathway");
+	sub_title.textContent = "List of the pathway :";
 	var parra = document.getElementById("instruc");
 	var input_start = document.getElementById("a3").value;
 	var input_end = document.getElementById("a5").value;
