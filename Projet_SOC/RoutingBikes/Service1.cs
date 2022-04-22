@@ -82,44 +82,51 @@ namespace RoutingBikes
                 return null;
             }
             Console.WriteLine("Find one station...");
-            double[] coordinate = new double[2];
-            if (isCoord)
+            try
             {
-                NumberFormatInfo provider = new NumberFormatInfo();
-                provider.NumberDecimalSeparator = ".";
-                var temp = adresse.Split(',');
-                coordinate = new double[] { Convert.ToDouble(temp[0],provider), Convert.ToDouble(temp[1],provider) };
-            }
-            else
-            {
-                coordinate = GetCoordinate(adresse).Result;
-            }
-            SortedDictionary<double, Station> stationFind = SortedStations(coordinate).Result;
-            SortedDictionary<double, Station> sortedByTime = new SortedDictionary<double, Station>();
-            Station[] fiveStation = new Station[5];
-            bool found = false;
-
-            int i = 0;
-            Service1Client client = new Service1Client();
-            foreach (Station station in stationFind.Values)
-            {
-                JCDecauxItem stations = client.GetOneContract(station.contract_name);
-                foreach (Station value2 in stations.item)
+                double[] coordinate = new double[2];
+                if (isCoord)
                 {
-                    if ((value2.number == station.number && value2.available_bikes > 0 && searchBike) || (value2.number == station.number && value2.available_bike_stands > 0 && !searchBike))
+                    NumberFormatInfo provider = new NumberFormatInfo();
+                    provider.NumberDecimalSeparator = ".";
+                    var temp = adresse.Split(',');
+                    coordinate = new double[] { Convert.ToDouble(temp[0], provider), Convert.ToDouble(temp[1], provider) };
+                }
+                else
+                {
+                    coordinate = GetCoordinate(adresse).Result;
+                }
+                SortedDictionary<double, Station> stationFind = SortedStations(coordinate).Result;
+                SortedDictionary<double, Station> sortedByTime = new SortedDictionary<double, Station>();
+                Station[] fiveStation = new Station[5];
+                bool found = false;
+
+                int i = 0;
+                Service1Client client = new Service1Client();
+                foreach (Station station in stationFind.Values)
+                {
+                    JCDecauxItem stations = client.GetOneContract(station.contract_name);
+                    foreach (Station value2 in stations.item)
                     {
-                        fiveStation[i] = station;
-                        i++;
+                        if ((value2.number == station.number && value2.available_bikes > 0 && searchBike) || (value2.number == station.number && value2.available_bike_stands > 0 && !searchBike))
+                        {
+                            fiveStation[i] = station;
+                            i++;
+                        }
+                    }
+                    if (i == 5)
+                    {
+                        sortedByTime = DistanceByRoad(fiveStation, coordinate).Result;
+                        client.Close();
+                        return sortedByTime[sortedByTime.Keys.Min()];
                     }
                 }
-                if (i == 5)
-                {
-                    sortedByTime = DistanceByRoad(fiveStation, coordinate).Result;
-                    client.Close();
-                    return sortedByTime[sortedByTime.Keys.Min()];
-                }
+                client.Close();
             }
-            client.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception in OpenRouteServices, too many request ! Please wait !");
+            }
             return null;
         }
     }
