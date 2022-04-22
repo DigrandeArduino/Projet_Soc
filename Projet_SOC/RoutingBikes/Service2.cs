@@ -35,6 +35,11 @@ namespace RoutingBikes
 
         public FinalPath GetFinalPath(string start, string end, string isCoord)
         {
+            if(start == null || start=="" || end == null || end == null)
+            {
+                Console.WriteLine("Start or end destination are null !");
+                return null;
+            }
             Console.WriteLine("Find a path...");
             double[] coord_start = new double[] {0,0};
             double total_time = 0;

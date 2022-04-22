@@ -14,16 +14,28 @@ namespace ClientLourd
                 Console.WriteLine("Destination :\n");
                 string adresse = Console.ReadLine();
                 DateTime start = DateTime.Now;
-                Console.WriteLine("Wait execution...");
+                Console.WriteLine("Wait execution...\n");
                 Station station = client.FindStationAsync(adresse, true, false).Result;
-                Console.WriteLine("Execution time 1 : "+DateTime.Now.Subtract(start).ToString()+"s\n");
+                Console.WriteLine("Execution time 1 : "+DateTime.Now.Subtract(start).ToString()+"s");
+                if (station == null)
+                {
+                    Console.WriteLine("STATION NULL\n");
+                }
                 start = DateTime.Now;
                 station = client.FindStationAsync(adresse, true, false).Result;
-                Console.WriteLine("Execution time 2 : "+DateTime.Now.Subtract(start).ToString()+"s\n");
+                Console.WriteLine("Execution time 2 : "+DateTime.Now.Subtract(start).ToString()+"s");
+                if (station == null)
+                {
+                    Console.WriteLine("STATION NULL\n");
+                }
                 start = DateTime.Now;
                 station = client.FindStationAsync(adresse, true, false).Result;
-                Console.WriteLine("Execution time 3 : " + DateTime.Now.Subtract(start).ToString() + "s\n");
-                Console.WriteLine("Continuer ? [enter to stop]");
+                Console.WriteLine("Execution time 3 : " + DateTime.Now.Subtract(start).ToString() + "s");
+                if (station == null)
+                {
+                    Console.WriteLine("STATION NULL");
+                }
+                Console.WriteLine("\nContinuer ? [enter to stop]");
                 stop = Console.ReadLine();
             }
 

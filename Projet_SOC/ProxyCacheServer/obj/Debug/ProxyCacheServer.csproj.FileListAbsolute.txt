@@ -20,8 +20,6 @@ C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\Syst
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.csproj.CoreCompileInputs.cache
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.csproj.CopyComplete
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.pdb
-C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\ProxyCacheServer.dll.config
-C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\ProxyCacheServer.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\ProxyCacheServer.pdb
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\System.Buffers.dll
@@ -44,7 +42,6 @@ C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debu
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.csproj.AssemblyReference.cache
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.csproj.CoreCompileInputs.cache
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.csproj.CopyComplete
-C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.pdb
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\ProxyCacheServer.exe.config
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\ProxyCacheServer.exe
@@ -52,3 +49,9 @@ C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\Newt
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\Newtonsoft.Json.xml
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.csproj.SuggestedBindingRedirects.cache
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.exe
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\ProxyCacheServer.exe.config
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\ProxyCacheServer.exe
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.csproj.SuggestedBindingRedirects.cache
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.exe

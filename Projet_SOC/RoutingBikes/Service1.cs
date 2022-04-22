@@ -76,6 +76,11 @@ namespace RoutingBikes
 
         public async Task<Station> FindStation(string adresse, bool searchBike, bool isCoord)
         {
+            if(adresse == null || adresse == "")
+            {
+                Console.WriteLine("Adresse cannot be null !");
+                return null;
+            }
             Console.WriteLine("Find one station...");
             double[] coordinate = new double[2];
             if (isCoord)

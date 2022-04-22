@@ -25,12 +25,9 @@ C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingB
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.pdb
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\Newtonsoft.Json.dll
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\Newtonsoft.Json.xml
-C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\RoutingBikes.dll.config
-C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\RoutingBikes.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\RoutingBikes.pdb
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\Newtonsoft.Json.dll
-C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\ProxyCacheServer.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\System.Buffers.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\System.Memory.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\System.Numerics.Vectors.dll
@@ -40,7 +37,6 @@ C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\Sy
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\System.ValueTuple.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\ProxyCacheServer.pdb
-C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\ProxyCacheServer.dll.config
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\Newtonsoft.Json.xml
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\System.Buffers.xml
@@ -55,7 +51,6 @@ C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\Ro
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.csproj.CoreCompileInputs.cache
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\XsdGeneratedCode\GeneratedXsdTypes.cs
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.csproj.CopyComplete
-C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.dll
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.pdb
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\ProxyCacheServer.exe
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\ProxyCacheServer.exe.config
@@ -63,3 +58,9 @@ C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\RoutingB
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\RoutingBikes.exe
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.csproj.SuggestedBindingRedirects.cache
 C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.exe
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\RoutingBikes.exe.config
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\RoutingBikes.exe
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\ProxyCacheServer.exe
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\bin\Debug\ProxyCacheServer.exe.config
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.csproj.SuggestedBindingRedirects.cache
+C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\RoutingBikes\obj\Debug\RoutingBikes.exe
