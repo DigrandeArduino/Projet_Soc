@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thodi\\Desktop\\Local\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\CLientLourd.csproj": {}
+    "C:\\Users\\thodi\\Desktop\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\CLientLourd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thodi\\Desktop\\Local\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\CLientLourd.csproj": {
+    "C:\\Users\\thodi\\Desktop\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\CLientLourd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thodi\\Desktop\\Local\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\CLientLourd.csproj",
+        "projectUniqueName": "C:\\Users\\thodi\\Desktop\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\CLientLourd.csproj",
         "projectName": "CLientLourd",
-        "projectPath": "C:\\Users\\thodi\\Desktop\\Local\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\CLientLourd.csproj",
+        "projectPath": "C:\\Users\\thodi\\Desktop\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\CLientLourd.csproj",
         "packagesPath": "C:\\Users\\thodi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thodi\\Desktop\\Local\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\obj\\",
+        "outputPath": "C:\\Users\\thodi\\Desktop\\SOC\\Projet_Soc\\Projet_SOC\\HeavyClient\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thodi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

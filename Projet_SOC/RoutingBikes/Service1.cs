@@ -58,17 +58,18 @@ namespace RoutingBikes
         private async Task<SortedDictionary<double,Station>> DistanceByRoad(Station[] list, double[] coordinate)
         {
             SortedDictionary<double, Station> stationSorted = new SortedDictionary<double, Station>();
-            double duration = 0;
+            double distance = 0;
             for(int i = 0; i < list.Length; i++)
             {
-                duration = _finder.Path(coordinate,new double[2] { list[i].position.lat,list[i].position.lng}, "foot-walking");
+                _finder.Path(coordinate,new double[2] { list[i].position.lat,list[i].position.lng}, "foot-walking");
+                distance = _finder.item.features[0].properties.segments[0].distance;
                 try
                 {
-                    stationSorted.Add(duration, list[i]);
+                    stationSorted.Add(distance, list[i]);
                 }
                 catch (ArgumentException)
                 {
-                    duration = 0;
+                    distance = 0;
                 }
             }
             return stationSorted;

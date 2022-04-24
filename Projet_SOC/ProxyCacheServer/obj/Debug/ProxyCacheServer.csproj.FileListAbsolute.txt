@@ -55,3 +55,4 @@ C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debu
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\bin\Debug\Newtonsoft.Json.xml
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.csproj.SuggestedBindingRedirects.cache
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.exe
+C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\ProxyCacheServer\obj\Debug\ProxyCacheServer.csproj.AssemblyReference.cache
