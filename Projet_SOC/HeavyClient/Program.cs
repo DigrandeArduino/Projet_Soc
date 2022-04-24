@@ -38,6 +38,7 @@ namespace ClientLourd
             Console.WriteLine("Destination :\n");
             string adresse = Console.ReadLine();
             DateTime start = DateTime.Now;
+            DateTime total = DateTime.Now;
             Console.WriteLine("Wait execution...\n");
             Station station;
             for (int i = 0; i < 3; i++)
@@ -47,9 +48,11 @@ namespace ClientLourd
                 Console.WriteLine("Execution time "+i.ToString()+" : " + DateTime.Now.Subtract(start).ToString() + "s");
                 if (station == null)
                 {
-                    Console.WriteLine("STATION NULL\n");
+                    Console.WriteLine("STATION NULL");
                 }
             }
+            Console.WriteLine("Number of request : 3");
+            Console.WriteLine("Total time : " + DateTime.Now.Subtract(total).ToString() + "s");
             client.Close();
         }
 
