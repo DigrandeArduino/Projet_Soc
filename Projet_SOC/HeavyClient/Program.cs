@@ -6,12 +6,12 @@ namespace ClientLourd
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("CLIENT LOURD :\nExemple de fonction :\n");
+            Console.WriteLine("HEAVY CLIENT :\n Function example :\n");
             string stop = "n";
             string choice = "1";
             while (!stop.Equals(""))
             {
-                Console.WriteLine("Choice a function :\n1 - Test destination finder performance\n2 - Compare destination performance\n");
+                Console.WriteLine("Choose a function :\n1 - Test destination finder performance\n2 - Compare destination performance\n");
                 choice = Console.ReadLine();
                 Console.WriteLine(" ");
                 if(choice == "1")
@@ -26,7 +26,7 @@ namespace ClientLourd
                 {
                     Console.WriteLine("No function found...");
                 }
-                Console.WriteLine("\nContinuer ? [enter to stop]");
+                Console.WriteLine("Continue ? [enter to stop]");
                 stop = Console.ReadLine();
                 Console.WriteLine(" ");
             }
