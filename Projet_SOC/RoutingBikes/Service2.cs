@@ -5,22 +5,6 @@ using System.Text.Json;
 
 namespace RoutingBikes
 {
-    public class FinalPath
-    {
-        public double[] startCoord { get; set; }
-        public double[] startStationCoord { get; set; }
-        public double[] endStationCoord { get; set; }
-        public double[] endCoord { get; set; }
-        public double[][] pathStartToStation { get; set; }
-        public Step[] startStep { get; set; }
-        public double[][] pathBikeToStation { get; set; }
-        public Step[] bikeStep { get; set; }
-        public double[][] pathStartToEnd { get; set; }
-        public Step[] endStep { get; set; }
-        public string footIsBetter { get; set; }
-        public double total_time { get; set; }  
-    }
-
     public class Service2 : IService2
     { 
         private Service1 _service = new Service1();

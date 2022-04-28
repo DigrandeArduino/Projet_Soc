@@ -3,7 +3,7 @@
 namespace ProxyCacheServer
 {
     [ServiceContract]
-    public interface IService1
+    public interface IProxyCache
     {
         [OperationContract]
         JCDecauxItem GetAllStation();
