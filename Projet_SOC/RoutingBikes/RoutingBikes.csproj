@@ -120,6 +120,7 @@
   <ItemGroup>
     <Compile Include="CustomHeaderMessageInspector.cs" />
     <Compile Include="EnableCrossOriginResourceSharingBehavior.cs" />
+    <Compile Include="FinalPath.cs" />
     <Compile Include="Find.cs" />
     <Compile Include="Finder.cs" />
     <Compile Include="PathFinder.cs" />

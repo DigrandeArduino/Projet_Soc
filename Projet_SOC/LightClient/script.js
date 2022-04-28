@@ -36,9 +36,6 @@ function drawLine(coordinates, color, size, map, type){
 		vector_end = vector;
 		is_c_set = true;
 	}
-
-	/*map.addLayer(vector);
-	map.removeLayer(vector);*/
 }
 
 function callAPI(url, requestType, start, end, isCoord, finishHandler) {
@@ -105,11 +102,14 @@ function displayValue(){
 	    	instruct_end = instruct_start;
 	    }
 
+	    var print_time;
 	    var sub_title = document.getElementById("pathway");
 	    if(response.total_time<3600){
-	    	sub_title = new Date(SECONDS * 1000).toISOString().substr(14, 5)
+	    	print_time = new Date(response.total_time * 1000).toISOString().substr(14, 5)
 	    }
-	    var print_time = new Date(response.total_time * 1000).toISOString().substr(11, 8)
+	    else{
+	    	print_time = new Date(response.total_time * 1000).toISOString().substr(11, 8)
+	    }
 	    sub_title.textContent = "List of the pathway [duration : "+print_time+" ] :";
 	    
 	    var start_zoom = [response.startCoord[1],response.startCoord[0]]
