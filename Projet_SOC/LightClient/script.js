@@ -134,7 +134,7 @@ function startPath(){
 	if(instruct_start==="start"){
 		parragraphe.textContent = "Enter a start position and a destination...";
 	}
-	if(instruct_start==="none"){
+	if(instruct_start==="none"){ 
 		parragraphe.textContent = "Error too many request on OpenRouteServices !";
 	}
 	else{
