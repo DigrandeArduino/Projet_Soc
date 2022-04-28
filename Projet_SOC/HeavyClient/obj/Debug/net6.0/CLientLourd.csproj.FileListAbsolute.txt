@@ -151,3 +151,4 @@ C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\HeavyClient\obj\Debug\net
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\HeavyClient\obj\Debug\net6.0\CLientLourd.pdb
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\HeavyClient\obj\Debug\net6.0\CLientLourd.genruntimeconfig.cache
 C:\Users\thodi\Desktop\Local\SOC\Projet_Soc\Projet_SOC\HeavyClient\obj\Debug\net6.0\ref\CLientLourd.dll
+C:\Users\thodi\Desktop\SOC\Projet_Soc\Projet_SOC\HeavyClient\obj\Debug\net6.0\CLientLourd.csproj.AssemblyReference.cache

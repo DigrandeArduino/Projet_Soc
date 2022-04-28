@@ -4,7 +4,7 @@
     public class Service1 : IService1
     {
         private ProxyCacheGeneric<JCDecauxItem> cache = new ProxyCacheGeneric<JCDecauxItem>();
-        public JCDecauxItem GetDataFromCache(string CacheItemName)
+        private JCDecauxItem GetDataFromCache(string CacheItemName)
         {
             if (CacheItemName.Equals("all_data"))
             {
