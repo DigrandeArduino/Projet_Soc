@@ -120,7 +120,11 @@
   <ItemGroup>
     <Compile Include="CustomHeaderMessageInspector.cs" />
     <Compile Include="EnableCrossOriginResourceSharingBehavior.cs" />
+    <Compile Include="Find.cs" />
+    <Compile Include="Finder.cs" />
+    <Compile Include="PathFinder.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Reponse.cs" />
     <Compile Include="Service2.cs" />
     <Compile Include="IService2.cs" />
     <Compile Include="Connected Services\Proxy\Reference.cs">
